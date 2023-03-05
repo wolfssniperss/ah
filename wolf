@@ -1,1 +1,1984 @@
-print("77") 
+require "import"
+import "android.app.*"
+import "android.os.*"
+import "android.widget.*"
+import "android.view.*"
+import "AndLua"
+import "http"
+import "android.content.Context"
+import "android.content.Intent"
+import "android.net.Uri"
+import "android.provider.Settings"
+minlay1={
+  LinearLayout;
+  orientation="horizontal";
+  id="Win_minWindow1";
+  {
+    CardView;
+    layout_height="50dp";
+    radius=70;
+    layout_width="50dp";
+    {
+      ImageView;
+      src="image/gg1.png";
+      layout_height="fill";
+      layout_width="fill";
+    };
+  };
+  {
+    LinearLayout;
+    orientation="vertical";
+    {
+      TextView;
+      textColor="0xffff0000";
+      id="Nbox";
+    };
+    {
+      TextView;
+      textColor="0xFFFFFF00";
+      id="Nsante";
+    };
+    {
+      TextView;
+      textColor="0xFF00FF00";
+      id="Nlolo";
+    };
+    {
+      TextView;
+      textColor="0xFFFF9500";
+      id="Nrmad";
+    };
+  };
+};
+winlay1={
+  LinearLayout,
+  layout_width="-1",
+  layout_height="wrap_content",
+  {
+    CardView,
+    id="win_mainview1",
+    layout_width="60%w",
+    layout_height="wrap_content";
+    layout_margin="5dp",
+    CardElevation="5dp",
+    radius=40,
+    {
+      LinearLayout;
+      orientation="vertical";
+      background="image/rx2.jpg",
+      {
+        LinearLayout;
+        layout_width="fill";
+        {
+          LinearLayout;
+          orientation="horizontal";
+          layout_height="wrap_content";
+          layout_width="fill";
+          background="#FF0090FF";
+          background="#22FFFFFF",
+          gravity="center";
+          {
+            ImageView,
+            layout_width="7%w",
+            layout_height="7%w",
+            scaleType="centerCrop",
+            padding="3dp",
+            src="image/rx1.png",
+            ColorFilter="#FF8300",
+            onClick="changeWindow1",
+          },
+          {
+            ImageView;
+            layout_width="wrap_content";
+            src="image/logo.png";
+            layout_weight="1";
+            scaleType="center";
+            layout_height="wrap_content";
+            id="win_move1";
+          };
+          {
+            ImageView,
+            layout_width="7%w",
+            layout_height="7%w",
+            scaleType="centerCrop",
+            padding="3dp",
+            src="image/rx4.png",
+            ColorFilter="#FF8300",
+            onClick="close1",
+          },
+        };
+      };
+      {
+        LinearLayout;
+        layout_height="0.1%h";
+        layout_width="100%w";
+        background="0xff292929",};
+      {
+        LinearLayout;
+        orientation="horizontal";
+        layout_height="wrap_content";
+        layout_width="-1";
+        background="#22FFFFFF",
+        {
+          Button;
+          id="Game1";
+          layout_height="5%h";
+          layout_width="-1";
+          background="0x000000";
+          text="GAME";
+          textColor="#FF8300";
+          layout_weight="3";
+
+        };
+        {
+          Button;
+          id="esp1";
+          layout_height="5%h";
+          layout_width="-1";
+          background="0x000000";
+          text="Esp";
+          textSize="13";
+          textColor="#FF8300";
+          layout_weight="3";
+        };
+      };
+      {
+        PageView,
+        id="pg1",
+        layout_width="fill",
+        layout_height="30%h",
+        pages={
+          {
+            LinearLayout;
+            orientation="vertical";
+            {LinearLayout;
+              layout_height="0.1%h";
+              layout_width="100%w";
+              background="#292929",};
+            {
+              ScrollView;
+              layout_height="wrap_content";
+              {
+                LinearLayout;
+                layout_height="wrap_content";
+                layout_width="-1";
+                orientation="vertical";
+                {
+                  LinearLayout;
+                  id="_drawer_header";
+                  layout_height="wrap_content";
+                  layout_width="-1";
+                  orientation="vertical";
+                  {
+                    LinearLayout;
+                    layout_height="wrap_content";
+                    layout_width="-1";
+                    orientation="vertical";
+                    {
+                      LinearLayout;
+                      layout_width="100%w";
+                      orientation="vertical";
+                    };
+                    {
+                      Switch;
+                      id="kr1";
+                      text="سرعة ";
+                      textColor="#FFE700";
+                      layout_width="fill";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="kr2";
+                      text="صناديك خشبية ";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="kr3";
+                      text="لؤلؤ ";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="kr4";
+                      text="رماد ";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="kr5";
+                      text="صناديك سنتوبني ";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="kr6";
+                      text="sniper23";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="kr7";
+                      text="sniper24";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                  };
+                };
+              };
+            };
+          };
+          {
+            LinearLayout;
+            orientation="vertical";
+            {LinearLayout;
+              layout_height="0.1%h";
+              layout_width="100%w";
+              background="#292929",};
+            {
+              ScrollView;
+              layout_height="wrap_content";
+              {
+                LinearLayout;
+                layout_height="wrap_content";
+                layout_width="-1";
+                orientation="vertical";
+                {
+                  LinearLayout;
+                  id="_drawer_header";
+                  layout_height="wrap_content";
+                  layout_width="-1";
+                  orientation="vertical";
+                  {
+                    LinearLayout;
+                    layout_height="wrap_content";
+                    layout_width="-1";
+                    orientation="vertical";
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="100%w";
+                      orientation="vertical";
+                    };
+                    {
+                      CardView;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      background="0x00000000";
+                      layout_gravity="center";
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      {
+                        Switch;
+                        id="Thirdroot1";
+                        layout_height="wrap_content";
+                        textColor="#FFE700";
+                        text="Esp";
+                        layout_width="-1";
+                        layout_marginLeft="15dp";
+                      };
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      orientation="vertical";
+                      {
+                        TextView;
+                        id="lr1";
+                        textColor="0xFFFFFF00";
+                        text="about：0";
+                        layout_marginLeft="15dp";
+                      };
+                      {
+                        SeekBar;
+                        layout_width="match_parent";
+                        id="seekbar_lr1";
+                        min="-300";
+                        max="300";
+                        progress="0";
+                      };
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      orientation="vertical";
+                      {
+                        TextView;
+                        id="up1";
+                        textColor="0xFFFFFF00";
+                        text="up and down：0";
+                        layout_marginLeft="15dp";
+                      };
+                      {
+                        SeekBar;
+                        layout_width="match_parent";
+                        id="upi1";
+                        min="-300";
+                        max="300";
+                        progress="0";
+                      };
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      orientation="vertical";
+                      {
+                        TextView;
+                        id="left1";
+                        textColor="0xFFFFFF00";
+                        text="left：0";
+                        layout_marginLeft="15dp";
+                      };
+                      {
+                        SeekBar;
+                        layout_width="match_parent";
+                        id="seekbar_left1";
+                        min="-300";
+                        max="300";
+                        progress="0";
+                      };
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      orientation="vertical";
+                      {
+                        TextView;
+                        id="right1";
+                        textColor="0xFFFFFF00";
+                        text="right：0";
+                        layout_marginLeft="15dp";
+                      };
+                      {
+                        SeekBar;
+                        layout_width="match_parent";
+                        id="seekbar_right1";
+                        min="-300";
+                        max="300";
+                        progress="0";
+                      };
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+}
+minlay2={
+  LinearLayout;
+  orientation="horizontal";
+  id="Win_minWindow2";
+  {
+    CardView;
+    layout_height="50dp";
+    radius=70;
+    layout_width="50dp";
+    {
+      ImageView;
+      src="image/gg1.png";
+      layout_height="fill";
+      layout_width="fill";
+    };
+  };
+  {
+    LinearLayout;
+    orientation="vertical";
+    {
+      TextView;
+      textColor="0xffff0000";
+      id="Nbox2";
+    };
+    {
+      TextView;
+      textColor="0xFFFFFF00";
+      id="Nsante2";
+    };
+    {
+      TextView;
+      textColor="0xFF00FF00";
+      id="Nlolo2";
+    };
+    {
+      TextView;
+      textColor="0xFFFF9500";
+      id="Nrmad2";
+    };
+  };
+};
+winlay2={
+  LinearLayout,
+  layout_width="-1",
+  layout_height="wrap_content",
+  {
+    CardView,
+    id="win_mainview2",
+    layout_width="60%w",
+    layout_height="wrap_content";
+    layout_margin="5dp",
+    CardElevation="5dp",
+    radius=40,
+    {
+      LinearLayout;
+      orientation="vertical";
+      background="image/rx2.jpg",
+      {
+        LinearLayout;
+        layout_width="fill";
+        {
+          LinearLayout;
+          orientation="horizontal";
+          layout_height="wrap_content";
+          layout_width="fill";
+          background="#FF0090FF";
+          background="#22FFFFFF",
+          gravity="center";
+          {
+            ImageView,
+            layout_width="7%w",
+            layout_height="7%w",
+            scaleType="centerCrop",
+            padding="3dp",
+            src="image/rx1.png",
+            ColorFilter="#FF8300",
+            onClick="changeWindow2",
+          },
+          {
+            ImageView;
+            layout_width="wrap_content";
+            src="image/logo.png";
+            layout_weight="1";
+            scaleType="center";
+            layout_height="wrap_content";
+            id="win_move2";
+          };
+          {
+            ImageView,
+            layout_width="7%w",
+            layout_height="7%w",
+            scaleType="centerCrop",
+            padding="3dp",
+            src="image/rx4.png",
+            ColorFilter="#FF8300",
+            onClick="close2",
+          },
+        };
+      };
+      {
+        LinearLayout;
+        layout_height="0.1%h";
+        layout_width="100%w";
+        background="0xff292929",};
+      {
+        LinearLayout;
+        orientation="horizontal";
+        layout_height="wrap_content";
+        layout_width="-1";
+        background="#22FFFFFF",
+        {
+          Button;
+          id="Game2";
+          layout_height="5%h";
+          layout_width="-1";
+          background="0x000000";
+          text="GAME";
+          textColor="#FF8300";
+          layout_weight="3";
+        };
+        {
+          Button;
+          id="esp2";
+          layout_height="5%h";
+          layout_width="-1";
+          background="0x000000";
+          text="Esp";
+          textSize="13";
+          textColor="#FF8300";
+          layout_weight="3";
+        };
+      };
+      {
+        PageView,
+        id="pg2",
+        layout_width="fill",
+        layout_height="30%h",
+        pages={
+          {
+            LinearLayout;
+            orientation="vertical";
+
+            {LinearLayout;
+              layout_height="0.1%h";
+              layout_width="100%w";
+              background="#292929",};
+            {
+              ScrollView;
+              layout_height="wrap_content";
+              {
+                LinearLayout;
+                layout_height="wrap_content";
+                layout_width="-1";
+                orientation="vertical";
+                {
+                  LinearLayout;
+                  id="_drawer_header";
+                  layout_height="wrap_content";
+                  layout_width="-1";
+                  orientation="vertical";
+                  {
+                    LinearLayout;
+                    layout_height="wrap_content";
+                    layout_width="-1";
+                    orientation="vertical";
+                    {
+                      LinearLayout;
+                      layout_width="100%w";
+                      orientation="vertical";
+                    };
+                    {
+                      Switch;
+                      id="gl1";
+                      text="سرعة ";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="gl2";
+                      text="صناديك سنتوبني ";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="gl3";
+                      text="صناديك خشبية ";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="gl4";
+                      text="رماد ";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="gl5";
+                      text="sniper22";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="gl6";
+                      text="sniper23";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                    {
+                      Switch;
+                      id="gl7";
+                      text="sniper24";
+                      textColor="#FFE700";
+                      layout_width="-1";
+                      gravity="left";
+                    };
+                  };
+                };
+              };
+            };
+          };
+          {
+            LinearLayout;
+            orientation="vertical";
+            {LinearLayout;
+              layout_height="0.1%h";
+              layout_width="100%w";
+              background="#292929",};
+            {
+              ScrollView;
+              layout_height="wrap_content";
+              {
+                LinearLayout;
+                layout_height="wrap_content";
+                layout_width="-1";
+                orientation="vertical";
+                {
+                  LinearLayout;
+                  id="_drawer_header";
+                  layout_height="wrap_content";
+                  layout_width="-1";
+                  orientation="vertical";
+                  {
+                    LinearLayout;
+                    layout_height="wrap_content";
+                    layout_width="-1";
+                    orientation="vertical";
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="100%w";
+                      orientation="vertical";
+                    };
+                    {
+                      CardView;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      background="0x00000000";
+                      layout_gravity="center";
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      {
+                        Switch;
+                        id="Thirdroot";
+                        layout_height="wrap_content";
+                        textColor="#FFE700";
+                        text="Esp";
+                        layout_width="-1";
+                        layout_marginLeft="15dp";
+                      };
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      orientation="vertical";
+                      {
+                        TextView;
+                        id="lr";
+                        textColor="0xFFFFFF00";
+                        text="about：0";
+                        layout_marginLeft="15dp";
+                      };
+                      {
+                        SeekBar;
+                        layout_width="match_parent";
+                        id="seekbar_lr";
+                        min="-300";
+                        max="300";
+                        progress="0";
+                      };
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      orientation="vertical";
+                      {
+                        TextView;
+                        id="up";
+                        textColor="0xFFFFFF00";
+                        text="up and down：0";
+                        layout_marginLeft="15dp";
+                      };
+                      {
+                        SeekBar;
+                        layout_width="match_parent";
+                        id="upi";
+                        min="-300";
+                        max="300";
+                        progress="0";
+                      };
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      orientation="vertical";
+                      {
+                        TextView;
+                        id="left";
+                        textColor="0xFFFFFF00";
+                        text="left：0";
+                        layout_marginLeft="15dp";
+                      };
+                      {
+                        SeekBar;
+                        layout_width="match_parent";
+                        id="seekbar_left";
+                        min="-300";
+                        max="300";
+                        progress="0";
+                      };
+                    };
+                    {
+                      LinearLayout;
+                      layout_height="wrap_content";
+                      layout_width="-1";
+                      orientation="vertical";
+                      {
+                        TextView;
+                        id="right";
+                        textColor="0xFFFFFF00";
+                        text="right：0";
+                        layout_marginLeft="15dp";
+                      };
+                      {
+                        SeekBar;
+                        layout_width="match_parent";
+                        id="seekbar_right";
+                        min="-300";
+                        max="300";
+                        progress="0";
+                      };
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+}
+
+activity.setRequestedOrientation(1);
+layout={
+  FrameLayout;
+  background="image/hack.png";
+  {
+    FrameLayout;
+    id="leaves";
+    layout_height="-1";
+    layout_width="-1";
+  };
+  {
+    LinearLayout;
+    layout_width="fill";
+    layout_height="fill";
+    orientation="vertical";
+    {
+      TextView;
+      paddingTop="41dp";
+      paddingLeft="21dp";
+      text="THE TIME IS";
+      textColor="#FF7700";
+      textSize="20sp";
+    };
+    {
+      TextView;
+      paddingLeft="40dp";
+      paddingTop="5dp";
+      id="tim";
+      text="00:00:00";
+      textColor="#FF7700";
+      textSize="15sp";
+    };
+    {
+      LinearLayout;
+      layout_width="-1";
+      layout_height="20%h";
+      orientation="vertical";
+      gravity="center";
+      {
+        TextView;
+        layout_gravity="center";
+        paddingTop="25dp";
+        id="nodonload";
+        textColor="#FF8300";
+        Gravity="center";
+      };
+      {
+        CardView;
+        radius="34dp";
+        layout_height="2%h";
+        layout_width="80%w";
+        BackgroundColor="0x00ffffff";
+        {
+          TextView;
+          id="linedownload";
+          layout_height="20%h";
+          background="#FF8300";
+          Gravity="center";
+        };
+      };
+      {
+        TextView;
+        layout_width="0";
+        layout_gravity="center";
+        id="checkedlink";
+        layout_height="0";
+        text="noload";
+        textSize="1";
+      };
+      {
+        TextView;
+        ellipsize="marquee";
+        id="ms";
+        text=" يا اللة ";
+        focusableInTouchMode=true;
+        textSize="15dp";
+        focusable=true;
+        singleLine=true;
+        textColor="#FFD100";
+        layout_width="100%w";
+      };
+    };
+  };
+  {
+    ScrollView;
+    layout_width="-1";
+    layout_height="-1";
+    {
+      LinearLayout;
+      layout_width="-1";
+      layout_gravity="center";
+      orientation="vertical";
+      layout_height="-1";
+      gravity="center";
+      {
+        TextView;
+        layout_marginTop="50dp";
+        text="";
+        textColor="#ffffffff";
+        gravity="center";
+      };
+      {
+        FrameLayout;
+        layout_width="fill";
+        layout_height="60dp";
+        layout_gravity="center";
+        {
+          Button;
+          layout_width="180dp";
+          layout_gravity="center";
+          id="menu";
+          layout_height="40dp";
+          TextColor="#ffffffff";
+          text="MOD MENU";
+        };
+        {
+          Button;
+          layout_width="60dp";
+          layout_gravity="center";
+          text="KOREA";
+          layout_marginLeft="-120dp";
+          id="krFW";
+          layout_height="60dp";
+          TextColor="#ffffffff";
+          TextSize="3sp";
+        };
+        {
+          Button;
+          layout_width="60dp";
+          layout_gravity="center";
+          text="GLOBAL";
+          layout_marginLeft="120dp";
+          id="glFW";
+          layout_height="60dp";
+          TextColor="#ffffffff";
+          TextSize="3sp";
+        };
+      };
+      {
+        FrameLayout;
+        layout_width="fill";
+        layout_height="60dp";
+        layout_gravity="center";
+        {
+          Button;
+          layout_width="180dp";
+          layout_gravity="center";
+          id="game";
+          layout_height="40dp";
+          TextColor="#ffffffff";
+          text="OPEN GAME";
+        };
+      };
+      {
+        FrameLayout;
+        layout_width="fill";
+        layout_height="60dp";
+        layout_gravity="center";
+        {
+          Button;
+          layout_width="180dp";
+          layout_gravity="center";
+          id="download";
+          layout_height="40dp";
+          TextColor="#ffffffff";
+          text="DOWNLOAD";
+        };
+      };
+      {
+        FrameLayout;
+        layout_width="fill";
+        layout_height="60dp";
+        layout_gravity="center";
+        {
+          Button;
+          layout_width="180dp";
+          layout_gravity="center";
+          id="Telegram";
+          layout_height="40dp";
+          textColor="#ffffffff";
+          text="Telegram";
+        };
+      };
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))
+os.execute("su")
+Window_Manager1=activity.getSystemService(Context.WINDOW_SERVICE)
+kr =WindowManager.LayoutParams()
+if Build.VERSION.SDK_INT >= 26 then
+  kr.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+ else
+  kr.type =WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
+end
+import "android.graphics.PixelFormat"
+kr.format =PixelFormat.RGBA_8888
+kr.flags=WindowManager.LayoutParams().FLAG_NOT_FOCUSABLE
+kr.gravity = Gravity.LEFT| Gravity.TOP
+kr.x = 333
+kr.y = 333
+kr.width =WindowManager.LayoutParams.WRAP_CONTENT
+kr.height =WindowManager.LayoutParams.WRAP_CONTENT
+mainWindow1=loadlayout(winlay1)
+minWindow1=loadlayout(minlay1)
+function close1(v1)
+  IsFloatingWindowOpen1=false
+  Window_Manager1.removeView(mainWindow1)
+end
+function vs(idd,tex,txt)
+  if tex ~= txt then
+    idd.setVisibility(View.VISIBLE)
+   else
+    idd.setVisibility(View.GONE)
+  end
+end
+isopen1=true
+function changeWindow1()
+  if isopen1==false then
+    isopen1=true
+    ti.stop()
+    Window_Manager1.removeView(minWindow1)
+    Window_Manager1.addView(mainWindow1,kr)
+   else
+    isopen1=false
+    Window_Manager1.removeView(mainWindow1)
+    Window_Manager1.addView(minWindow1,kr)
+    Nbox.setVisibility(View.GONE)
+    Nlolo.setVisibility(View.GONE)
+    Nrmad.setVisibility(View.GONE)
+    Nsante.setVisibility(View.GONE)
+    ti=Ticker()
+    ti.Period=1000
+    ti.onTick=function()
+      box=io.open(activity.getLuaDir("/cpp/box.txt")):read("*a")
+      lolo=io.open(activity.getLuaDir("/cpp/lolo.txt")):read("*a")
+      rmad=io.open(activity.getLuaDir("/cpp/rmad.txt")):read("*a")
+      sante=io.open(activity.getLuaDir("/cpp/sante.txt")):read("*a")
+      vs(Nbox,tostring(box),"box=0")
+      vs(Nlolo,tostring(lolo),"lolo=0")
+      vs(Nrmad,tostring(rmad),"rmad=0")
+      vs(Nsante,tostring(sante),"san=0")
+      Nbox.text=tostring(box)
+      Nlolo.text=tostring(lolo)
+      Nrmad.text=tostring(rmad)
+      Nsante.text=tostring(sante)
+    end
+    ti. start()
+  end
+end
+function Win_minWindow1.onClick(v1)
+  changeWindow1()
+end
+function Win_minWindow1.OnTouchListener(v1,event)
+  if event.getAction()==MotionEvent.ACTION_DOWN then
+    firstX=event.getRawX()
+    firstY=event.getRawY()
+    wmX=kr.x
+    wmY=kr.y
+   elseif event.getAction()==MotionEvent.ACTION_MOVE then
+    kr.x=wmX+(event.getRawX()-firstX)
+    kr.y=wmY+(event.getRawY()-firstY)
+    Window_Manager1.updateViewLayout(minWindow1,kr)
+   elseif event.getAction()==MotionEvent.ACTION_UP then
+  end
+  return false
+end
+function win_move1.OnTouchListener(v1,event)
+  if event.getAction()==MotionEvent.ACTION_DOWN then
+    firstX=event.getRawX()
+    firstY=event.getRawY()
+    wmX=kr.x
+    wmY=kr.y
+   elseif event.getAction()==MotionEvent.ACTION_MOVE then
+    kr.x=wmX+(event.getRawX()-firstX)
+    kr.y=wmY+(event.getRawY()-firstY)
+    Window_Manager1.updateViewLayout(mainWindow1,kr)
+   elseif event.getAction()==MotionEvent.ACTION_UP then
+  end
+  return true
+end
+function Game1.onClick()
+  pg1.showPage(0)
+end
+function esp1.onClick()
+  pg1.showPage(1)
+end
+Window_Manager2=activity.getSystemService(Context.WINDOW_SERVICE)
+lg =WindowManager.LayoutParams()
+if Build.VERSION.SDK_INT >= 26 then
+  lg.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+ else
+  lg.type =WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
+end
+import "android.graphics.PixelFormat"
+lg.format =PixelFormat.RGBA_8888
+lg.flags=WindowManager.LayoutParams().FLAG_NOT_FOCUSABLE
+lg.gravity = Gravity.LEFT| Gravity.TOP
+lg.x = 666
+lg.y = 333
+lg.width =WindowManager.LayoutParams.WRAP_CONTENT
+lg.height =WindowManager.LayoutParams.WRAP_CONTENT
+mainWindow2=loadlayout(winlay2)
+minWindow2=loadlayout(minlay2)
+function close2(v2)
+  IsFloatingWindowOpen2=false
+  Window_Manager2.removeView(mainWindow2)
+end
+isopen2=true
+function changeWindow2()
+  if isopen2==false then
+    isopen2=true
+    ti2. stop()
+    Window_Manager2.removeView(minWindow2)
+    Window_Manager2.addView(mainWindow2,lg)
+   else
+    isopen2=false
+    Window_Manager2.removeView(mainWindow2)
+    Window_Manager2.addView(minWindow2,lg)
+    Nbox2.setVisibility(View.GONE)
+    Nlolo2.setVisibility(View.GONE)
+    Nrmad2.setVisibility(View.GONE)
+    Nsante2.setVisibility(View.GONE)
+    ti2=Ticker()
+    ti2.Period=1000
+    ti2.onTick=function()
+      box=io.open(activity.getLuaDir("/cpp/box.txt")):read("*a")
+      lolo=io.open(activity.getLuaDir("/cpp/lolo.txt")):read("*a")
+      rmad=io.open(activity.getLuaDir("/cpp/rmad.txt")):read("*a")
+      sante=io.open(activity.getLuaDir("/cpp/sante.txt")):read("*a")
+      vs(Nbox2,tostring(box),"box=0")
+      vs(Nlolo2,tostring(lolo),"lolo=0")
+      vs(Nrmad2,tostring(rmad),"rmad=0")
+      vs(Nsante2,tostring(sante),"san=0")
+      Nbox2.text=tostring(box)
+      Nlolo2.text=tostring(lolo)
+      Nrmad2.text=tostring(rmad)
+      Nsante2.text=tostring(sante)
+    end
+    ti2. start()
+  end
+end
+function Win_minWindow2.onClick(v2)
+  changeWindow2()
+end
+function Win_minWindow2.OnTouchListener(v2,event)
+  if event.getAction()==MotionEvent.ACTION_DOWN then
+    firstX=event.getRawX()
+    firstY=event.getRawY()
+    wmX=lg.x
+    wmY=lg.y
+   elseif event.getAction()==MotionEvent.ACTION_MOVE then
+    lg.x=wmX+(event.getRawX()-firstX)
+    lg.y=wmY+(event.getRawY()-firstY)
+    Window_Manager2.updateViewLayout(minWindow2,lg)
+   elseif event.getAction()==MotionEvent.ACTION_UP then
+  end
+  return false
+end
+function win_move2.OnTouchListener(v2,event)
+  if event.getAction()==MotionEvent.ACTION_DOWN then
+    firstX=event.getRawX()
+    firstY=event.getRawY()
+    wmX=lg.x
+    wmY=lg.y
+   elseif event.getAction()==MotionEvent.ACTION_MOVE then
+    lg.x=wmX+(event.getRawX()-firstX)
+    lg.y=wmY+(event.getRawY()-firstY)
+    Window_Manager2.updateViewLayout(mainWindow2,lg)
+   elseif event.getAction()==MotionEvent.ACTION_UP then
+  end
+  return true
+end
+function Game2.onClick()
+  pg2.showPage(0)
+end
+function esp2.onClick()
+  pg2.showPage(1)
+end
+import "com.mslh.LeafView"
+leaves.addView(LeafView(this,activity.getLuaPath("image/AutumnLeaves.png")))
+import "android.animation.ObjectAnimator"
+function jump_botton(id,time)
+  ObjectAnimator().ofFloat(id,"scaleX",{1,.8,1.3,.9,1}).setDuration(time).start()
+  ObjectAnimator().ofFloat(id,"scaleY",{1,.8,1.3,.9,1}).setDuration(time).start()
+end
+function Edge_Button(id_button,BackGroundColor,Edge,EdgeButtonColor)
+  import "android.graphics.drawable.GradientDrawable"
+  drawable = GradientDrawable()
+  drawable.setShape(GradientDrawable.RECTANGLE)
+  drawable.setCornerRadii({Edge, Edge, Edge, Edge, Edge, Edge, Edge, Edge})
+  drawable.setColor(BackGroundColor)
+  drawable.setStroke(2, EdgeButtonColor)
+  id_button.setBackgroundDrawable(drawable)
+end
+Edge_Button(menu,0x6f000000,30,0xFFFF7700)
+Edge_Button(krFW,0x6f000000,30,0xFFFF7700)
+Edge_Button(glFW,0x6f000000,30,0xFFFF7700)
+Edge_Button(game,0x6f000000,30,0xFFFF7700)
+Edge_Button(download,0x6f000000,30,0xFFFF7700)
+Edge_Button(Telegram,0x6f000000,30,0xFFFF7700)
+function ApplyFloatingWindows(delay)
+  function WindowPermissions()
+    if (Build.VERSION.SDK_INT >= 19 and not Settings.canDrawOverlays(this)) then
+      return false
+     elseif Build.VERSION.SDK_INT < 19 then
+      print("Sorry your phone does not support opening floating windows❌")
+      return nil
+     else
+      return true
+    end
+  end
+  if WindowPermissions() then
+   else
+    AlertDialog.Builder(this)
+    .setTitle("Permission is required")
+    .setMessage("You need to give the application floating window permission to open the mode menu")
+    .setPositiveButton("OK",{onClick=function(v)
+        intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+        intent.setData(Uri.parse("package:" .. activity.getPackageName()));
+        activity.startActivityForResult(intent, delay);
+      end})
+    .show()
+  end
+end
+function krFW.onClick()
+  jump_botton(krFW,300)
+  ApplyFloatingWindows(100)
+  if IsFloatingWindowOpen1==true then
+    return
+   else
+    IsFloatingWindowOpen1=true
+    pcall(function() Window_Manager1.addView(mainWindow1,kr) end)
+  end
+end
+function glFW.onClick()
+  jump_botton(glFW,300)
+  ApplyFloatingWindows(100)
+  if IsFloatingWindowOpen2==true then
+    return
+   else
+    IsFloatingWindowOpen2=true
+    pcall(function() Window_Manager2.addView(mainWindow2,lg) end)
+  end
+end
+function Hide_button(id_botton1,id_botton2)
+  import "android.graphics.drawable.GradientDrawable"
+  if id_botton1.getVisibility()==0 then
+    import "android.view.animation.Animation$AnimationListener"
+    import "android.view.animation.ScaleAnimation"
+    id_botton1.startAnimation(ScaleAnimation(1.0, 0.0, 1.0, 0.0,1, 0.5, 1, 0.5).setDuration(500))
+    id_botton1.setVisibility(View.INVISIBLE)
+    id_botton2.startAnimation(ScaleAnimation(1.0, 0.0, 1.0, 0.0,1, 0.5, 1, 0.5).setDuration(400))
+    id_botton2.setVisibility(View.INVISIBLE)
+   else
+    import "android.view.animation.Animation$AnimationListener"
+    import "android.view.animation.ScaleAnimation"
+    id_botton1.setVisibility(View.VISIBLE)
+    id_botton1.startAnimation(ScaleAnimation(0.0, 1.0, 0.0, 1.0,1, 0.5, 1, 0.5).setDuration(200))
+    id_botton2.setVisibility(View.VISIBLE)
+    id_botton2.startAnimation(ScaleAnimation(0.0, 1.0, 0.0, 1.0,1, 0.5, 1, 0.5).setDuration(300))
+  end
+end
+krFW.setVisibility(View.INVISIBLE)
+glFW.setVisibility(View.INVISIBLE)
+function menu.onClick(v)
+  jump_botton(menu,300)
+  Hide_button(glFW,krFW)
+end
+function game.onClick(v)
+  jump_botton(game,300)
+  task(2000,function()
+    run_game = activity.getPackageManager().getLaunchIntentForPackage("com.xdg.and.eu.lifeafter")
+    this.startActivity(run_game)
+    print_message("LifeAfter Running")
+  end)
+end
+function print_message(txt)
+  layuot_message={
+    FrameLayout;
+    layout_height="fill";
+    layout_width="fill";
+    {
+      CardView;
+      radius="34dp";
+      {
+        ImageView;
+        src="image/print.jpg";
+        scaleType="fitXY";
+        layout_height="40dp";
+        layout_gravity="center";
+        layout_width="60%w";
+      };
+      {
+        TextView;
+        paddingRight="52dp";
+        textSize="15sp";
+        text="T1A2";
+        layout_gravity="center";
+        textColor="#FFFFFF";
+        id="text";
+      };
+    };
+    {
+      TextView;
+      layout_height="40dp";
+    }
+  };
+  local TheMessage=Toast.makeText(activity,"txt",Toast.LENGTH_SHORT)
+  .setView(loadlayout(layuot_message))
+  text.Text=txt
+  TheMessage.show()
+end
+import "android.content.Intent"
+import "android.net.Uri"
+function Telegram.onClick(v)
+  jump_botton(Telegram,300)
+  task(1000,function()
+    intent = Intent("android.intent.action.VIEW")
+    intent .setData(Uri.parse("https://t.me/wolves_sniper"))
+    this.startActivity(intent)
+  end)
+end
+import "android.content.Intent"
+import "android.content.pm.PackageManager"
+function time()
+  tim.setText(os.date("%H:%M:%S AM"))
+  if tonumber(os.date("%H"))==tonumber("24") then
+    tim.setText(os.date("00:%M:%S AM" ))
+   elseif tonumber(os.date("%H"))==tonumber("23") then
+    tim.setText(os.date("11:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("22") then
+    tim.setText(os.date("10:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("21") then
+    tim.setText(os.date("9:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("20") then
+    tim.setText(os.date("8:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("19") then
+    tim.setText(os.date("7:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("18") then
+    tim.setText(os.date("6:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("17") then
+    tim.setText(os.date("5:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("16") then
+    tim.setText(os.date("4:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("15") then
+    tim.setText(os.date("3:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("14") then
+    tim.setText(os.date("2:%M:%S PM"))
+   elseif tonumber(os.date("%H"))==tonumber("13") then
+    tim.setText(os.date("1:%M:%S PM"))
+  end
+end
+function Refresh()
+  require("import")
+  while true do
+    Thread.sleep(100)
+    call("run")
+  end
+end
+function run()
+  time()
+end
+thread(Refresh)
+function Ndialog(id,colo,edge,dialogRadii,dialogRadii3)
+  if not dialogRadii
+    then
+    dialogRadii=0
+  end
+  if not dialogRadii2 then
+    dialogRadii2=dialogRadii
+  end
+  id.setBackgroundDrawable(GradientDrawable()
+  .setShape(GradientDrawable.RECTANGLE)
+  .setColor(colo)
+  .setStroke(2, edge)
+  .setCornerRadii({dialogRadii,dialogRadii,dialogRadii,dialogRadii,dialogRadii2,dialogRadii2,dialogRadii2,dialogRadii2}))
+end
+function message_online(link_message)
+  Http.get(link_message,nil,"utf8",nil,function(code,content)
+    if code==200 then
+      show_message=content:match("【on】(.-)【on】")
+      if show_message =="on" then
+        titel=content:match("【tietl】(.-)【tietl】")
+        message=content:match("【message】(.-)【message】")
+        ms.Text=message
+        InputLayout={
+          LinearLayout;
+          Focusable=true;
+          FocusableInTouchMode=true;
+          background="0x00000000";
+          gravity="center";
+          orientation="vertical";
+          {
+            FrameLayout;
+            background="0x00000000";
+            layout_width="match_parent";
+            layout_height="30%h";
+            {
+              LinearLayout;
+              gravity="right";
+              layout_height="18%h";
+              id="wolf";
+              background="#FFFFFF";
+              layout_width="match_parent";
+              layout_gravity="bottom";
+              {
+                TextView;
+                text="";
+                layout_marginRight="3%h";
+                layout_width="60%w";
+                id="textonline";
+                layout_marginTop="2%w";
+                textColor="#ffffff";
+                textSize="15sp";
+              };
+            };
+            {
+              LinearLayout;
+              layout_width="fill";
+              layout_gravity="bottom|left";
+              {
+                ImageView;
+                layout_height="fill";
+                scaleType="matrix";
+                src="image/rr.png";
+                layout_width="30%h";
+                layout_gravity="left";
+              };
+            };
+            {
+              TextView;
+              layout_gravity="right";
+              layout_height="wrap_content";
+              textColor="#ffffff";
+              text="تجربة";
+              layout_marginBottom="5%h";
+              singleLine="true";
+              layout_marginRight="3%h";
+              id="tet";
+              layout_marginTop="6%h";
+              layout_width="70%h";
+              textSize="30sp";
+            };
+          };
+        };
+        gg=AlertDialog.Builder(this)
+        .setView(loadlayout(InputLayout))
+        .setPositiveButton("حسنا",nil)
+        .setCancelable(false)
+        .show()
+        tet.Text=tostring(titel)
+        textonline. setText(message)
+        gg.getButton(gg.BUTTON_POSITIVE).setTextColor(0xFFFF7700)
+        gg.getButton(gg.BUTTON_NEGATIVE).setTextColor(0xFFFF7700)
+        Edge_Button(wolf,0x6f000000,30,0xFFFF7700)
+        Ndialog(gg.getWindow(),0x00000000,0x4C000000,40)
+        import "android.graphics.Color"
+        import "android.graphics.drawable.GradientDrawable"
+      end
+     else
+      print_message("no connection")
+    end
+  end)
+end
+message_online("https://pastebin.com/raw/nCQJHYmY")
+function Edge_Button(id_button,BackGroundColor,Edge,EdgeButtonColor)
+  import "android.graphics.drawable.GradientDrawable"
+  drawable = GradientDrawable()
+  drawable.setShape(GradientDrawable.RECTANGLE)
+  drawable.setCornerRadii({Edge, Edge, Edge, Edge, Edge, Edge, Edge, Edge})
+  drawable.setColor(BackGroundColor)
+  drawable.setStroke(2, EdgeButtonColor)
+  id_button.setBackgroundDrawable(drawable)
+end
+function update(version,link)
+  Http.get(link,nil,"utf8",nil,function(code,content)
+    if code==200 then
+      new_version=content:match("【version】(.-)【version】")
+      if new_version > version then
+        titleupdate=content:match("【title】(.-)【title】")
+        update_notes=content:match("【notes】(.-)【notes】")
+        update_links=content:match("【links】(.-)【links】")
+        AlertDialog.Builder(this)
+        .setTitle(titleupdate)
+        .setMessage(update_notes)
+        .setCancelable(false)
+        .setPositiveButton("Update",{onClick=function(v)
+            GoToWebpage(update_links)
+            os.exit()
+          end})
+        .setNegativeButton("Cancel",{onClick=function(v)
+            os.exit()
+          end})
+        .show()
+      end
+     else
+      print_message("no connection")
+    end
+  end)
+end
+update("1","https://pastebin.com/raw/hDuUrnVP")
+function seekbarColor(id)
+  id.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xAAFF8300,PorterDuff.Mode.SRC_ATOP))
+
+  id.Thumb.setColorFilter(PorterDuffColorFilter(0xFFFF8300,PorterDuff.Mode.SRC_ATOP))
+end
+seekbarColor(seekbar_lr)
+seekbarColor(upi)
+seekbarColor(seekbar_left)
+seekbarColor(seekbar_right)
+seekbarColor(seekbar_lr1)
+seekbarColor(upi1)
+seekbarColor(seekbar_left1)
+seekbarColor(seekbar_right1)
+import "zip4j"
+function download_kr(link_kr)
+  Http.get(link_kr,nil,"utf8",nil,function(code,content)
+    if code==200 then
+      link_kr=content:match("【kr】(.-)【kr】")
+      ready=content:match("【download】(.-)【download】")
+      checkedlink.Text=ready
+      function isFileThere(path)
+        return File(path).exists()
+      end
+      zip4j.unZipDir("/storage/emulated/0/Android/cpp.zip","/storage/emulated/0/Android/cpp/","wolfssniperss22")
+      os.execute("su -c mv /storage/emulated/0/Android/cpp /data/data/com.t1a2.hack/files/")
+      function kr_Completed(url,path)
+        local kr_timeTicker=Ticker()
+        kr_timeTicker.start()
+        Http.download(link_kr,path,function(code,data,cookie,header)
+          kr_timeTicker.stop()
+          linedownload.Width=activity.Width
+          nodonload.Text="100%"
+          print_message("Download complete")
+          download.Text="Done"
+        end)
+        function kr_timeTicker.onTick()
+          import "java.io.File"
+          local files=io.open(path,"r")
+          if files~=nil then
+            local len=files:read("a")
+            local size=#len/lens
+            local m=activity.Width*size
+            linedownload.Width=m
+            nodonload.Text=math.ceil(size*100).."%"
+          end
+        end
+      end
+      function kr_Download(url,path)
+        import "java.net.URL"
+        realUrl = URL(url)
+        con = realUrl.openConnection();
+        lens=con.getContentLength()
+        kr_Completed(url,path)
+      end
+      function download.onClick()
+        jump_botton(download,300)
+        if checkedlink.Text=="noload" then
+          print_message("Please wait")
+         else
+          local url=link_kr
+          local path="/storage/emulated/0/Android/cpp.zip"
+          kr_Download(url,path)
+          download.Text="Downloading"
+        end
+      end
+     else
+      print_message("no connection")
+    end
+  end)
+end
+download_kr("https://pastebin.com/raw/1NSH2jLg")
+import "android.graphics.PorterDuffColorFilter"
+import "android.graphics.PorterDuff"
+function cheat_kr1(id,name,message,col)
+  path=activity.getLuaDir("/cpp/"..name)
+  os.execute("su -c chmod 777 "..path)
+  Runtime.getRuntime().exec("su -c "..path)
+  id.ThumbDrawable.setColorFilter(PorterDuffColorFilter(col,PorterDuff.Mode.SRC_ATOP));
+  id.TrackDrawable.setColorFilter(PorterDuffColorFilter(col,PorterDuff.Mode.SRC_ATOP))
+  print_message(message)
+end
+function cheat_kr(id,name,message,nu,txt,col)
+  path=activity.getLuaDir("/cpp/"..name)
+  os.execute("su -c chmod 777 "..path)
+  Runtime.getRuntime().exec("su -c "..path)
+  reed= io.open("/storage/emulated/0/cppCon/lolo.txt", "r")
+  id.ThumbDrawable.setColorFilter(PorterDuffColorFilter(col,PorterDuff.Mode.SRC_ATOP));
+  id.TrackDrawable.setColorFilter(PorterDuffColorFilter(col,PorterDuff.Mode.SRC_ATOP))
+  print_message(message)
+end
+function w_tofile(nu,txt)
+  io.open(activity.getLuaDir("/cpp/"..tostring(nu)),"w+"):write(txt):close()
+end
+function kr1.OnCheckedChangeListener()
+  if kr1.checked then
+    --cheat_kr1(kr1,"speed","Active",0xFF00FF00)
+   else
+
+  end
+end
+function kr2.OnCheckedChangeListener()
+  if kr2.checked then
+    w_tofile(1,"box_on.txt")
+    cheat_kr(kr2,"box","Active",0xFF00FF00)
+   else
+    w_tofile(0,"box_on.txt")
+  end
+end
+function kr3.OnCheckedChangeListener()
+  if kr3.checked then
+    w_tofile(1,"lolo_on.txt")
+    cheat_kr(kr3,"lolo","Active",0xFF00FF00)
+   else
+    w_tofile(0,"lolo_on.txt")
+  end
+end
+function kr4.OnCheckedChangeListener()
+  if kr4.checked then
+    w_tofile(1,"rmad_on.txt")
+    cheat_kr(kr4,"rmad","Active",0xFF00FF00)
+   else
+    w_tofile(0,"rmad_on.txt")
+  end
+end
+function kr5.OnCheckedChangeListener()
+  if kr5.checked then
+    w_tofile(1,"sante_on.txt")
+    cheat_kr(kr5,"sante","Active",0xFF00FF00)
+   else
+    w_tofile(0,"sante_on.txt")
+  end
+end
+function kr6.OnCheckedChangeListener()
+  if kr6.checked then
+    --   cheat_kr(kr6,"m","Active",0xFF00FF00)
+   else
+    -- cheat_kr(kr6,"m","Active",0xFFFF8200)
+  end
+end
+function kr7.OnCheckedChangeListener()
+  if kr7.checked then
+    --  cheat_kr(kr7,"m","Active",0xFF00FF00)
+   else
+    --   cheat_kr(kr7,"m","Active",0xFFFF8200)
+  end
+end
+function gl1.OnCheckedChangeListener()
+  if gl1.checked then
+    -- cheat_kr1(gl1,"speed1","Active",0xFF00FF00)
+   else
+
+  end
+end
+function gl2.OnCheckedChangeListener()
+  if gl2.checked then
+    w_tofile(1,"box_on.txt")
+    cheat_kr(gl2,"box1","Active",0xFF00FF00)
+   else
+    w_tofile(0,"box_on.txt")
+  end
+end
+function gl3.OnCheckedChangeListener()
+  if gl3.checked then
+    w_tofile(1,"lolo_on.txt")
+    cheat_kr(gl3,"lolo1","Active",0xFF00FF00)
+   else
+    w_tofile(0,"lolo_on.txt")
+  end
+end
+function gl4.OnCheckedChangeListener()
+  if gl4.checked then
+    w_tofile(1,"rmad_on.txt")
+    cheat_kr(gl4,"rmad1","Active",0xFF00FF00)
+   else
+    w_tofile(0,"rmad_on.txt")
+  end
+end
+function gl5.OnCheckedChangeListener()
+  if gl5.checked then
+    w_tofile(1,"sante_on.txt")
+    cheat_kr(gl5,"sante1","Active",0xFF00FF00)
+   else
+    w_tofile(0,"sante_on.txt")
+  end
+end
+function gl6.OnCheckedChangeListener()
+  if gl6.checked then
+    --cheat_kr(gl6,"m","Active",0xFF00FF00)
+   else
+    -- cheat_kr(gl6,"m","Active",0xFFFF8200)
+  end
+end
+function gl7.OnCheckedChangeListener()
+  if gl7.checked then
+    -- cheat_kr(gl7,"m","Active",0xFF00FF00)
+   else
+    -- cheat_kr(gl7,"m","Active",0xFFFF8200)
+  end
+end
+
+--[[require "import"
+import "android.content.Context"
+import "canvas"
+import "android.graphics.*"
+fkts={
+  LinearLayout;
+  layout_width="match_parent";
+  layout_height="match_parent";
+  {
+    SurfaceView;
+    layout_width="match_parent";
+    layout_height="match_parent";
+    id="Win";
+  };
+};
+
+wmManagers = activity.getSystemService(Context.WINDOW_SERVICE)
+HasFocus = false
+wmParam = WindowManager.LayoutParams()
+if tonumber(Build.VERSION.SDK) >= 26 then
+  wmParam.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+ else
+  wmParam.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
+end
+import("android.graphics.PixelFormat")
+wmParam.format = PixelFormat.RGBA_8888
+wmParam.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+wmParam.gravity = Gravity.LEFT | Gravity.TOP
+wmParam.width = tonumber((获取屏幕高()))
+wmParam.height = tonumber((获取屏幕宽()))
+minWi = loadlayout(fkts)
+Win.setZOrderOnTop(true)
+Win.setZOrderMediaOverlay(true)
+Win.getHolder().setFormat(PixelFormat.TRANSLUCENT)
+io.open("/sdcard/b.log", 'w')
+function 读文件(path)
+  local file=io.input(path)
+  local str=io.read("*a")
+  io.close()
+  return str
+end
+--暂停timer定时器
+--启动timer定时器
+paint = Paint()
+paint.setColor(Color.parseColor("#FF0000F6"))--紫色
+paint.setStyle(Paint.Style.FILL)
+paint.setAlpha(60)
+paint1 = Paint()
+paint1.setColor(Color.rgb(124, 252, 0))
+paint1.setStyle(Paint.Style.STROKE)
+paint1.setStrokeWidth(2)
+paint2 = Paint()
+paint2.setAlpha(255)
+paint2.setColor(Color.parseColor("#FF00F000"))--绿色
+paint2.setStyle(Paint.Style.STROKE)
+paint2.setStrokeWidth(3)
+paint3 = Paint()
+paint3.setColor(Color.parseColor("#FF00F100"))---绿色
+paint3.setStrokeWidth(5)
+paint4 = Paint()
+paint4.setARGB(255, 0, 250, 0)
+paint4.setStrokeWidth(10)
+paint5 = Paint()
+paint5.setColor(Color.parseColor("#FFFFFFFF"))
+paint5.setStrokeWidth(10)
+paint5.setTextSize(17)
+paint6 = Paint()
+paint6.setColor(Color.parseColor("#FFFFFFFF"))
+paint6.setStyle(Paint.Style.FILL)
+paint6.setTextSize(48)
+paint7=Paint()
+paint7.setColor(Color.parseColor("#70000000"))--灰色  血条下面距离背景
+paint7.setStyle(Paint.Style.FILL)--线条宽度
+--paint7.setTextSize(55)
+a=获取屏幕宽()
+b=获取屏幕高()
+import "java.io.*"
+file,err=io.open("/sdcard/lr.log")
+if err==nil then
+  jdz=读文件("/sdcard/lr.log")
+  lr.setText(" about:"..jdz)
+  seekbar_lr.setProgress(tonumber(jdz))
+end
+file1,err1=io.open("/sdcard/right.log")
+if err1==nil then
+  jdz=读文件("/sdcard/right.log")
+  right.setText(" right:"..jdz)
+  seekbar_right.setProgress(tonumber(jdz))
+end
+file2,err2=io.open("/sdcard/left.log")
+if err2==nil then
+  jdz=读文件("/sdcard/left.log")
+  left.setText(" left:"..jdz)
+  seekbar_left.setProgress(tonumber(jdz))
+end
+file3,err3=io.open("/sdcard/up.log")
+if err3==nil then
+  jdz=读文件("/sdcard/up.log")
+  up.setText(" up and down:"..jdz)
+  upi.setProgress(tonumber(jdz))
+end
+seekbar_lr.setOnSeekBarChangeListener{
+  onStartTrackingTouch=function()
+    --开始拖动
+  end,
+  onStopTrackingTouch=function()
+    写入文件("/sdcard/lr.log",tostring(seekbar_lr.getProgress()))
+    --停止拖动
+  end,
+  onProgressChanged=function()
+    --状态改变
+    zypy = seekbar_lr.getProgress
+    lr.setText("about:"..tostring(seekbar_lr.getProgress()))
+  end}
+upi.setOnSeekBarChangeListener{
+  onStartTrackingTouch=function()
+    --开始拖动
+  end,
+  onStopTrackingTouch=function()
+    写入文件("/sdcard/up.log",tostring(upi.getProgress()))
+    --停止拖动
+  end,
+  onProgressChanged=function()
+    --状态改变
+    zypy = seekbar_lr.getProgress
+    up.setText("up and down:"..tostring(upi.getProgress()))
+  end}
+seekbar_left.setOnSeekBarChangeListener{
+  onStartTrackingTouch=function()
+    --开始拖动
+  end,
+  onStopTrackingTouch=function()
+    写入文件("/sdcard/left.log",tostring(seekbar_left.getProgress()))
+    --停止拖动
+  end,
+  onProgressChanged=function()
+    --状态改变
+    left.setText("left:"..tostring(seekbar_left.getProgress()))
+  end}
+seekbar_right.setOnSeekBarChangeListener{
+  onStartTrackingTouch=function()
+    --开始拖动
+  end,
+  onStopTrackingTouch=function()
+    写入文件("/sdcard/right.log",tostring(seekbar_right.getProgress()))
+    --停止拖动
+  end,
+  onProgressChanged=function()
+    --状态改变
+    right.setText("right:"..tostring(seekbar_right.getProgress()))
+  end}
+callback=SurfaceHolder_Callback{
+  surfaceChanged=function(holder,format,width,height)
+  end,
+  surfaceCreated=function(holder)
+  end,
+  surfaceDestroyed=function(holder)
+    mloop=false
+  end
+}
+holder=Win.getHolder()
+holder.addCallback(callback)
+function str_split(s, c)
+  if not s then return nil end
+  local m = string.format("([^%s]+)", c)
+  local t = {}
+  local k = 1
+  for v in string.gmatch(s, m) do
+    t[k] = v
+    k = k + 1
+  end
+  return t
+end
+iscanvas = false
+isrun=true
+isline=false
+ismloop=false
+ishero=false
+ism =false
+isFirst = true
+function draw()
+  hero = 0
+  zypy=seekbar_lr.getProgress()
+  r=seekbar_right.getProgress()
+  l=seekbar_left.getProgress()
+  upii=upi.getProgress()
+  file = io.open ("/sdcard/b.log","r")
+  ca=holder.lockCanvas()
+  ca.drawColor(0, PorterDuff.Mode.CLEAR);
+  if (ca~=nil) then
+    for str in file:lines() do
+      if str~=nil and str!="" then
+        coor=str_split(str,",")
+        x=tonumber(coor[1])
+        y=tonumber(coor[2])
+        w=tonumber(coor[3])
+        h=tonumber(coor[4])
+        m=tonumber(coor[5])
+        hp=tonumber(coor[6])
+        if y ~= nil and x ~= nil and w ~= nil and hp ~= nil and m < 450 and 1 < m and hp < 121 and 0 < hp then
+          if m<450 and m>1 and hp<121 and hp>0 then
+            if x < 0 then
+              if y <= 0 then
+                ca.drawCircle(0+r, 0, 80, paint3);
+               elseif y > 1080 then
+                ca.drawCircle(0+r, 1080, 80, paint3);
+               else
+                ca.drawCircle(0+r, y, 80, paint3);
+                ca.drawText(tostring(math.ceil(m)).."M" ,0+r, y, paint5);
+              end
+             elseif x > b then
+              if y <= 0 then
+                ca.drawCircle(b+20+l, 0, 80, paint3);
+               elseif y > 1080 then
+                ca.drawCircle(b+20+l, 1080, 80, paint3);
+               else
+                ca.drawCircle(b+20+l, y, 80, paint3);
+                ca.drawText(tostring(math.ceil(m)).."M", b-40+l, y, paint5);
+              end
+            end
+            if m<100 and m>1 and hp<121 and hp>0 then
+              hero=hero+1
+            end
+            if x < 2340 and x > 0 and y > 0 and w > 0 and h > 0 and hp>0 then
+              if iscanvas == true then----开启方框
+                ca.drawRect(x-w/2+zypy+40, y - w, x+w/2+zypy+40, y + w, paint1);
+                ca.drawRect(x-w/2+zypy+40, y - w, x+w/2+zypy+40, y + w, paint);
+              end
+              if ismloop == true then---开启血条
+                ca.drawRect(x - 85 + zypy, y-w - 40, x + 85 + zypy, y-w, paint)
+                ca.drawLine(x - 85 + zypy, y-w - 5, x - 85.0 + hp / 100 * 170 + zypy, y-w - 5, paint3)
+              end
+              if ism==true then---开启距离
+                ca.drawText("Man-machine" .. "\r distance:" .. tostring(math.ceil(m)) .. "Meter\r" .. tostring(math.ceil(hp)) .. "%", x - 80 + zypy, y - w-15, paint5)
+               else
+                ca.drawText("Real people" .. "\r distance:" .. tostring(math.ceil(m)) .. "Meter\r" .. tostring(math.ceil(hp)) .. "%", x - 80 + zypy, y - w-15, paint5)
+              end
+              if isline == true then---开启射线
+                ca.drawLine(activity.getHeight() / 2, 0, x + zypy, y - 40+upii, paint2)
+              end
+            end
+          end
+        end
+      end
+    end
+    if ishero == true and hero > 0 then---开启百米人数
+      ca.drawText("Zero degree：Around" .. hero .. "Enemies",activity.getHeight()/ 2 - 150, 150, paint6)
+    end
+  end
+  holder.unlockCanvasAndPost(ca)
+end
+function gphz()
+  mloop=true
+  require "import"
+  -- print(mloop)
+  while mloop do
+    call("draw")
+  end
+end
+function Thirdroot.OnCheckedChangeListener()
+  if Thirdroot.checked==true then
+    Toast.makeText(activity, "首次运行 开始布置面板",Toast.LENGTH_SHORT).show()
+    --minWi=loadlayout(fkts)
+    io.open("/storage/emulated/0/x","w"):write(activity.getWidth()):close()
+    io.open("/storage/emulated/0/y","w"):write(activity.getHeight()):close()
+    wmManagers.addView(minWi, wmParam)
+    rootExecution("assets/R","ROOT")
+  end
+  if Thirdroot.checked==true then
+    if isrun==true then
+      thread(gphz)
+      isrun=false
+    end
+    if iscanvas == false then
+      iscanvas =true
+    end
+   else
+    iscanvas=false
+  end
+  if Thirdroot.checked==true then
+    if isrun==true then
+      thread(gphz)
+      isrun=false
+    end
+    isline=true
+   else
+    isline=false
+  end
+  if Thirdroot.checked==true then
+    if isrun==true then
+      thread(gphz)
+      isrun=false
+    end
+    ism=true
+   else
+    ism=false
+  end
+  if Thirdroot.checked==true then
+    if isrun==true then
+      thread(gphz)
+      isrun=false
+    end
+    ismloop=true
+   else
+    ismloop=false
+  end
+end
+function rootExecution(路径二,提示二)--中文函数
+  调用路径二=activity.getLuaDir(路径二)--自动获取lua文件的执行路径,只需填二进制在插件的目录路径即可
+  os.execute("su -c chmod 777 "..调用路径二)--授予777权限
+  Runtime.getRuntime().exec("su -c "..调用路径二)--root执行二进制功能
+  Toast.makeText(activity, 提示二,Toast.LENGTH_SHORT).show()
+end
+--]]
