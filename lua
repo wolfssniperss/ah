@@ -84,33 +84,41 @@ function HOME()
   PUBGMH = -1
 end
 function N1()
+while 1~=2 do
   gg.setRanges(4)
   local tb1 = {{'-1071197555' , '0'},{'1089482354' , '60'},}-- {'1089482354' , '195'}, }
   local tb2 = {{'1133903872' , '-236'}, }
   local dt = 4
   SearchWrite(tb1,tb2, dt)
+  end
 end
 
 function N2()
+while 1~=2 do
   gg.setRanges(4)
   local tb1 = {{'-1059896394', '0'}, {'1093002521', '60'}, }
   local tb2 = {{'1133903872', '-236'}, }
   local dt = 4
   SearchWrite(tb1,tb2, dt)
+  end
 end
 function N3()
+while 1~=2 do
   gg.setRanges(4)
   local tb1 = {{'-1065164473', '0'}, {'1090871362', '60'}, }
   local tb2 = {{'1133903872', '-236'}, }
   local dt = 4
   SearchWrite(tb1,tb2, dt)
+  end
 end
 function N4()
+while 1~=2 do
   gg.setRanges(4)
   local tb1 = {{'-1056723436','0'}, {'1093163021', '60'}, }
   local tb2 = {{'1133903872', '-236'}, }
   local dt = 4
   SearchWrite(tb1,tb2, dt)
+  end
 end
 -- ['REGION_ANONYMOUS'] = 32,
 -- ['REGION_ASHMEM'] = 524288,
